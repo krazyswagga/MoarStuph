@@ -13,6 +13,10 @@ import me.samkio.mo.blocks.logs.*;
 import me.samkio.mo.blocks.misc.microwave.MicrowaveItem;
 import me.samkio.mo.blocks.misc.microwave.MicrowaveItemWatcher;
 import me.samkio.mo.blocks.ores.*;
+import me.samkio.mo.items.food.fruits.BananaFruit;
+import me.samkio.mo.items.food.fruits.CoconutFruit;
+import me.samkio.mo.items.food.fruits.OrangeFruit;
+import me.samkio.mo.items.food.fruits.PearFruit;
 import me.samkio.mo.items.ingots.*;
 import me.samkio.mo.populators.CrystalPopulator;
 import me.samkio.mo.populators.OrePopulator;
@@ -30,20 +34,27 @@ import org.getspout.spoutapi.block.design.Texture;
 import org.getspout.spoutapi.material.block.GenericCustomBlock;
 import org.getspout.spoutapi.material.item.GenericCustomItem;
 import org.bukkit.inventory.ItemStack;
+
 @SuppressWarnings("unused")
 public class MoarStuph extends JavaPlugin {
 //http://www.minecraftforum.net/topic/423079-escape-haunted-house-escape-210-dls-first-official-mcdh-clan-map/page__p__5875439#entry5875439
 	//http://www.minecraftforum.net/topic/697245-181-halloween-day-7/
 	
 	public Logger log = Logger.getLogger("Minecraft");
-	public Texture OreTextureFile,TreeTextureFile,MiscTextureFile;
+	public Texture OreTextureFile, TreeTextureFile, FoodTextureFile, FarmingTextureFile, MiscTextureFile;
 	public Set<MoarCubeCustomBlockSimple> ores = new HashSet<MoarCubeCustomBlockSimple>();
 	public Set<MoarGenericCustomBlock> crystals = new HashSet<MoarGenericCustomBlock>();
+	public Set<GenericCustomItem> food = new HashSet<GenericCustomItem>();
 	private MoarPlayerListener pL = new MoarPlayerListener(this);
 	private MoarBlockListener bL = new MoarBlockListener(this);
 	public List<MicrowaveItem> microwavedFood = new ArrayList<MicrowaveItem>();
 	private MicrowaveItemWatcher watcher = new MicrowaveItemWatcher();
+	public PearFruit f;
+	public CoconutFruit f1;
+	public BananaFruit f2;
+	public OrangeFruit f3;
 	public static MoarStuph instance;
+	
 	@Override
 	public void onDisable() 
 	{
@@ -70,27 +81,28 @@ public class MoarStuph extends JavaPlugin {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		log.info("Moar Ores is ready to rock and roll!");
-		log.info("PellTato - Let's MASH some ideas together!");
-		OreTextureFile = new Texture(this,"http://dl.dropbox.com/u/19653570/ores.png",256,256,16);
-		TreeTextureFile = new Texture(this,"http://dl.dropbox.com/u/19653570/Trees.png",256,256,16);
-		MiscTextureFile = new Texture(this,"http://dl.dropbox.com/u/19653570/Misc.png",256,256,16);
+		OreTextureFile = new Texture(this, "http://dl.dropbox.com/u/19653570/ores.png", 256, 256, 16); //Ores should be capitalised! ;(
+		TreeTextureFile = new Texture(this, "http://dl.dropbox.com/u/19653570/Trees.png", 256, 256, 16);
+		FoodTextureFile = new Texture(this, "http://cloud.github.com/downloads/mbsuperstar1/MoarStuph/Food.png", 256, 256, 16); // TODO Find an artist...
+		FarmingTextureFile = new Texture(this, "", 256, 256, 16); 
+		MiscTextureFile = new Texture(this, "http://dl.dropbox.com/u/19653570/Misc.png", 256, 256, 16);
+		//TODO Pre-cache URLs as suggested in the spout tutorial.
 		this.loadBlocks();
 		getCommand("dbg").setExecutor(new DebugMan(this));
-		for(World current : this.getServer().getWorlds())
-		{
-			if(current.getEnvironment()==Environment.NORMAL)
-			{
+		for(World current : this.getServer().getWorlds()) {
+			if(current.getEnvironment() == Environment.NORMAL) {
 				current.getPopulators().add(new OrePopulator(this));
 				current.getPopulators().add(new CrystalPopulator(this));
 				current.getPopulators().add(new TreePopulator(this));
 				log.info("Added Populators to World: "+current.getName()+".");
-			}
-				
+			}	
 		}
 		this.getServer().getScheduler().scheduleSyncRepeatingTask(this, watcher, 0, 20);
 		this.getServer().getPluginManager().registerEvent(Event.Type.BLOCK_BREAK, bL, Event.Priority.Highest, this);
-		//new FurnaceChef(this);
+		//new FurnaceChef(this); 
+		// TODO Crafting Version for custom recipes. 
+		log.info("Moar Stuph is ready to rock and roll!");
+		log.info("PellTato - Let's MASH some ideas together!");
 	}
 
 	public void loadBlocks(){
@@ -144,7 +156,16 @@ public class MoarStuph extends JavaPlugin {
 		crystals.add(c3);
 		crystals.add(c4);
 		crystals.add(c5);
-		crystals.add(c6); 
+		crystals.add(c6);
+		
+		f = new PearFruit(this);  //Samkio, this is currently temporary code
+		f1 = new CoconutFruit(this); // so I can quickly add all food
+		f2 = new BananaFruit(this); // to the players inventory.
+		f3 = new OrangeFruit(this);
+		food.add(f);
+		food.add(f1);
+		food.add(f2);
+		food.add(f3);
 	
 		//Microwave has custom DING
 		
@@ -157,12 +178,5 @@ public class MoarStuph extends JavaPlugin {
 		MapleLog  t5 = new MapleLog(this);
 		RottenLog t6 = new RottenLog(this);
 		PalmLog t7 = new PalmLog(this); */
-		
-				
-
-		
 	}
-	
-
-
 }

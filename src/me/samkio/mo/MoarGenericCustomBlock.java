@@ -126,5 +126,4 @@ public class MoarGenericCustomBlock extends GenericCustomBlock {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }

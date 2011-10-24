@@ -13,12 +13,18 @@ public class MoarPlayerListener extends PlayerListener{
 	public MoarPlayerListener(MoarStuph p){
 		this.plugin = p;
 	}
-	public void onPlayerInteract(PlayerInteractEvent e){
-		if(e.getAction()!=Action.RIGHT_CLICK_BLOCK) return;
+
+	public void onPlayerInteract(PlayerInteractEvent e) {
+		if (e.getAction()!= Action.RIGHT_CLICK_BLOCK) {
+			return;
+		}
 		e.getPlayer().sendMessage("Clicked a block!");
 		SpoutBlock sb = (SpoutBlock) e.getClickedBlock();
-		if(sb instanceof GenericCustomBlock) e.getPlayer().sendMessage("It is a custom block");
-		if(sb instanceof MicrowaveBlock) e.getPlayer().sendMessage("It is a microwave block");
+		if (sb instanceof GenericCustomBlock) {
+			e.getPlayer().sendMessage("It is a custom block");
+		}
+		if (sb instanceof MicrowaveBlock) {
+			e.getPlayer().sendMessage("It is a microwave block");
+		}
 	}
-
 }

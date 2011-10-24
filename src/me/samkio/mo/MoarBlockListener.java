@@ -59,5 +59,4 @@ public class MoarBlockListener extends BlockListener {
 			}
 		}
 	}
-
 }
