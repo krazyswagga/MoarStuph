@@ -145,5 +145,4 @@ public class MoarCubeCustomBlockComplex extends GenericCubeCustomBlock {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
 }

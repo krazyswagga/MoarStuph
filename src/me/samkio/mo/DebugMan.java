@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.getspout.spoutapi.SpoutManager;
+import org.getspout.spoutapi.material.item.GenericCustomItem;
 
 public class DebugMan implements CommandExecutor {
 	private MoarStuph plugin;
@@ -19,12 +20,18 @@ public class DebugMan implements CommandExecutor {
 	public boolean onCommand(CommandSender cs, Command cmd, String arg2,
 			String[] arg3) {
 		Player plr = (Player) cs;
+		//This may be less depended upon once SpoutDev correctly register custom items in the creative inventory.
 		/*for (MoarCubeCustomBlockSimple b : plugin.ores) {
 			plr.getInventory()
 					.addItem(
 							SpoutManager.getMaterialManager()
 									.getCustomItemStack(b, 64));
 		}*/
+		for (GenericCustomItem b : plugin.food) {
+			plr.getInventory().addItem(
+					SpoutManager.getMaterialManager()
+					.getCustomItemStack(b, 64));
+		}
 		plr.getInventory().addItem(
 				SpoutManager.getMaterialManager().getCustomItemStack(
 						new WillowLog(plugin), 64)); 
@@ -33,5 +40,4 @@ public class DebugMan implements CommandExecutor {
 						new MicrowaveBlock(plugin), 64));
 		return true;
 	}
-
 }

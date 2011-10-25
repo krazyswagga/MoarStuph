@@ -10,6 +10,4 @@ public class BaseCrystal extends MoarGenericCustomBlock {
 		super(p, name, false,id, miny, maxy, fr, maxD);
 		this.setBlockDesign(new CrystalDesign(id, p));
 	}
-
-
 }

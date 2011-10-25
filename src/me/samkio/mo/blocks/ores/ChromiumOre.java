@@ -11,5 +11,4 @@ public class ChromiumOre extends MoarCubeCustomBlockSimple {
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(
 				this, 1));
 	}
-
 }

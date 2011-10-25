@@ -8,11 +8,14 @@ import org.bukkit.inventory.FurnaceRecipe;
 public class FurnaceChef {
 	MoarStuph plugin;
 	public ArrayList<FurnaceRecipe> furnaceRecipeObjects = new ArrayList<FurnaceRecipe>();
-public FurnaceChef(MoarStuph p){
-	this.plugin = p;
-	this.populateFurnaceRecipes();
-}
+	
+	public FurnaceChef(MoarStuph p) {
+		this.plugin = p;
+		this.populateFurnaceRecipes();
+		}
+	
 	private void populateFurnaceRecipes() {
+		//TODO Finish once spout finishes the issue I posted... https://github.com/SpoutDev/Spout/issues/800
 		//My Fruitless attempts at FurnaceRecipes
 					/*plugin.getServer().addRecipe(new FurnaceRecipe(SpoutManager.getMaterialManager().getCustomItemStack(new SilverIngot(plugin), 1),new MaterialData(SpoutManager.getMaterialManager().getCustomItemStack(new SilverOre(plugin), 1).getTypeId())));
 					plugin.getServer().addRecipe(new FurnaceRecipe(SpoutManager.getMaterialManager().getCustomItemStack(new CopperIngot(plugin), 1),new MaterialData(SpoutManager.getMaterialManager().getCustomItemStack(new CopperOre(plugin), 1).getTypeId())));
