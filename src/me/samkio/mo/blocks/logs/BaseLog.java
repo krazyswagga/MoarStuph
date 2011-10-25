@@ -1,5 +1,7 @@
 package me.samkio.mo.blocks.logs;
 
+
+import me.samkio.mo.MoarStuph;
 import org.bukkit.World;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
@@ -7,8 +9,6 @@ import org.bukkit.entity.LivingEntity;
 import org.getspout.spoutapi.block.design.GenericCubeBlockDesign;
 import org.getspout.spoutapi.material.block.GenericCubeCustomBlock;
 import org.getspout.spoutapi.player.SpoutPlayer;
-
-import me.samkio.mo.MoarStuph;
 
 public class BaseLog extends GenericCubeCustomBlock {
 

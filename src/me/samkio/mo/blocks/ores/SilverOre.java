@@ -1,13 +1,12 @@
 package me.samkio.mo.blocks.ores;
 
-import me.samkio.mo.MoarCubeCustomBlockSimple;
-import me.samkio.mo.MoarStuph;
 
+import me.samkio.mo.MoarStuph;
 import org.getspout.spoutapi.SpoutManager;
 
 
 
-public class SilverOre extends MoarCubeCustomBlockSimple{
+public class SilverOre extends BaseOre{
 
 	public SilverOre(MoarStuph p)
 	{

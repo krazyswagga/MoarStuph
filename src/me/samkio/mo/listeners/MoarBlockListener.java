@@ -1,7 +1,7 @@
-package me.samkio.mo;
+package me.samkio.mo.listeners;
 
+import me.samkio.mo.MoarStuph;
 import me.samkio.mo.blocks.misc.microwave.MicrowaveItem;
-
 import org.bukkit.Location;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockListener;
@@ -13,6 +13,7 @@ public class MoarBlockListener extends BlockListener {
 		this.plugin = p;
 	}
 
+    @Override
 	public void onBlockBreak(BlockBreakEvent e) {
 		//Not the best.
 		//Microwaves turn to glass on destruction, D:

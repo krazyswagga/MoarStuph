@@ -1,12 +1,11 @@
 package me.samkio.mo.blocks.ores;
 
-import me.samkio.mo.MoarCubeCustomBlockSimple;
 import me.samkio.mo.MoarStuph;
 
 import org.getspout.spoutapi.SpoutManager;
 
 
-public class TinOre extends MoarCubeCustomBlockSimple{
+public class TinOre extends BaseOre{
 
 	public TinOre(MoarStuph p)
 	{

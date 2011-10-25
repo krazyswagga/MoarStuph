@@ -1,12 +1,11 @@
 package me.samkio.mo.blocks.ores;
 
-import me.samkio.mo.MoarCubeCustomBlockSimple;
 import me.samkio.mo.MoarStuph;
 
 import org.getspout.spoutapi.SpoutManager;
 
 
-public class UraniumOre extends MoarCubeCustomBlockSimple{
+public class UraniumOre extends BaseOre{
 
 	public UraniumOre(MoarStuph p)
 	{

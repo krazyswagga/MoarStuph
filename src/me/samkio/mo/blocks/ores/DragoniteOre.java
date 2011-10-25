@@ -1,12 +1,11 @@
 package me.samkio.mo.blocks.ores;
 
-import me.samkio.mo.MoarCubeCustomBlockSimple;
 import me.samkio.mo.MoarStuph;
 
 import org.getspout.spoutapi.SpoutManager;
 
 
-public class DragoniteOre extends MoarCubeCustomBlockSimple{
+public class DragoniteOre extends BaseOre{
 
 	public DragoniteOre(MoarStuph p)
 	{

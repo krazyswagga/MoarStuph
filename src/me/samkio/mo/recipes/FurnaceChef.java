@@ -1,6 +1,7 @@
-package me.samkio.mo;
+package me.samkio.mo.recipes;
 
 import java.util.ArrayList;
+import me.samkio.mo.MoarStuph;
 
 
 import org.bukkit.inventory.FurnaceRecipe;

@@ -1,9 +1,10 @@
 name: MoarStuph
 main: me.samkio.mo.MoarStuph
 version: 1.0
-authors: [Samkio] 
+authors: [Samkio,mbsuperstar1] 
 commands:
   dbg:
     description: Spawns Stuff.
     usage: Spawns Stuff.
 depend: [Spout] 
+load: startup

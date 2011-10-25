@@ -27,7 +27,7 @@ public class DebugMan implements CommandExecutor {
 							SpoutManager.getMaterialManager()
 									.getCustomItemStack(b, 64));
 		}*/
-		for (GenericCustomItem b : plugin.food) {
+		for (GenericCustomItem b : ItemMaps.food) {
 			plr.getInventory().addItem(
 					SpoutManager.getMaterialManager()
 					.getCustomItemStack(b, 64));

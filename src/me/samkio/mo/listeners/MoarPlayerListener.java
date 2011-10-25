@@ -1,5 +1,6 @@
-package me.samkio.mo;
+package me.samkio.mo.listeners;
 
+import me.samkio.mo.MoarStuph;
 import me.samkio.mo.blocks.misc.microwave.MicrowaveBlock;
 
 import org.bukkit.event.block.Action;

@@ -1,25 +1,30 @@
-package me.samkio.mo;
+package me.samkio.mo.blocks.ores;
 
 
+import me.samkio.mo.MoarStuph;
 import org.bukkit.World;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
-import org.getspout.spoutapi.material.block.GenericCustomBlock;
+import org.getspout.spoutapi.block.design.GenericCubeBlockDesign;
+import org.getspout.spoutapi.material.block.GenericCubeCustomBlock;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
-public class MoarGenericCustomBlock extends GenericCustomBlock {
+public class BaseOre extends GenericCubeCustomBlock {
 	private int miny = 0, maxy = 126, frequency = 0,maxDump=0;
-	public MoarGenericCustomBlock(MoarStuph p, String name, boolean b, int id,int miny,int maxy,int fr, int maxD) {
-		super(p, name, b);
+
+	public BaseOre(MoarStuph p, String name, int id) {
+		super(p, name, new GenericCubeBlockDesign(p, p.OreTextureFile, id));
+	}
+	public BaseOre(MoarStuph p, String name, int id,int miny,int maxy,int fr, int maxD) {
+		super(p, name, new GenericCubeBlockDesign(p, p.OreTextureFile, id));
 		this.miny = miny;
 		this.maxy = maxy;
 		this.frequency = fr;
 		this.maxDump = maxD;
 	}
-	public MoarGenericCustomBlock(MoarStuph p, String name, boolean b) {
-		super(p, name, b);
-	}
+
+
 	public void setMinY(int i) {
 		this.miny = i;
 	}
@@ -50,10 +55,14 @@ public class MoarGenericCustomBlock extends GenericCustomBlock {
 	public int getMaxDump() {
 		return this.maxDump;
 	}
+
+
+
 	public boolean canPlaceBlockAt(World arg0, int arg1, int arg2, int arg3) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 	public boolean canPlaceBlockAt(World arg0, int arg1, int arg2, int arg3,
 			BlockFace arg4) {
@@ -61,11 +70,13 @@ public class MoarGenericCustomBlock extends GenericCustomBlock {
 		return false;
 	}
 
+
 	public boolean isIndirectlyProdivingPowerTo(World arg0, int arg1, int arg2,
 			int arg3, BlockFace arg4) {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 
 	@Override
 	public boolean isProvidingPowerTo(World arg0, int arg1, int arg2, int arg3,
@@ -74,6 +85,7 @@ public class MoarGenericCustomBlock extends GenericCustomBlock {
 		return false;
 	}
 
+
 	@Override
 	public void onBlockClicked(World arg0, int arg1, int arg2, int arg3,
 			SpoutPlayer arg4) {
@@ -81,11 +93,13 @@ public class MoarGenericCustomBlock extends GenericCustomBlock {
 		
 	}
 
+
 	@Override
 	public void onBlockDestroyed(World arg0, int arg1, int arg2, int arg3) {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 	@Override
 	public boolean onBlockInteract(World arg0, int arg1, int arg2, int arg3,
@@ -94,11 +108,13 @@ public class MoarGenericCustomBlock extends GenericCustomBlock {
 		return false;
 	}
 
+
 	@Override
 	public void onBlockPlace(World arg0, int arg1, int arg2, int arg3) {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 	@Override
 	public void onBlockPlace(World arg0, int arg1, int arg2, int arg3,
@@ -107,12 +123,14 @@ public class MoarGenericCustomBlock extends GenericCustomBlock {
 		
 	}
 
+
 	@Override
 	public void onEntityMoveAt(World arg0, int arg1, int arg2, int arg3,
 			Entity arg4) {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 	@Override
 	public void onNeighborBlockChange(World arg0, int arg1, int arg2, int arg3,
@@ -126,4 +144,5 @@ public class MoarGenericCustomBlock extends GenericCustomBlock {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
 }
