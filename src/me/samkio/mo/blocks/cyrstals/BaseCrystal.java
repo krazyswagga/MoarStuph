@@ -56,46 +56,49 @@ public class BaseCrystal extends GenericCustomBlock {
 
     @Override
     public void onNeighborBlockChange(World world, int i, int i1, int i2, int i3) {
-        throw new UnsupportedOperationException("Not supported yet.");
+       // throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void onBlockPlace(World world, int i, int i1, int i2) {
-        throw new UnsupportedOperationException("Not supported yet.");
+      //  throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void onBlockPlace(World world, int i, int i1, int i2, LivingEntity le) {
-        throw new UnsupportedOperationException("Not supported yet.");
+     //   throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void onBlockDestroyed(World world, int i, int i1, int i2) {
-        throw new UnsupportedOperationException("Not supported yet.");
+     //   throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public boolean onBlockInteract(World world, int i, int i1, int i2, SpoutPlayer sp) {
-        throw new UnsupportedOperationException("Not supported yet.");
+     //   throw new UnsupportedOperationException("Not supported yet.");
+        return true;
     }
 
     @Override
     public void onEntityMoveAt(World world, int i, int i1, int i2, Entity entity) {
-        throw new UnsupportedOperationException("Not supported yet.");
+      //  throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void onBlockClicked(World world, int i, int i1, int i2, SpoutPlayer sp) {
-        throw new UnsupportedOperationException("Not supported yet.");
+     //   throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public boolean isProvidingPowerTo(World world, int i, int i1, int i2, BlockFace bf) {
-        throw new UnsupportedOperationException("Not supported yet.");
+      //  throw new UnsupportedOperationException("Not supported yet.");
+        return true;
     }
 
     @Override
     public boolean isIndirectlyProvidingPowerTo(World world, int i, int i1, int i2, BlockFace bf) {
-        throw new UnsupportedOperationException("Not supported yet.");
+     //   throw new UnsupportedOperationException("Not supported yet.");
+        return true;
     }
 }

@@ -4,14 +4,14 @@ package me.samkio.mo;
 
 
 import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import me.samkio.mo.blocks.misc.microwave.MicrowaveItem;
 import me.samkio.mo.blocks.misc.microwave.MicrowaveItemWatcher;
-import me.samkio.mo.listeners.MoarBlockListener;
-import me.samkio.mo.listeners.MoarPlayerListener;
 import me.samkio.mo.populators.CrystalPopulator;
 import me.samkio.mo.populators.OrePopulator;
 import me.samkio.mo.populators.TreePopulator;
@@ -83,12 +83,14 @@ public class MoarStuph extends JavaPlugin {
         }
         public void setupTextures(){
             //TODO place in resources folder.
-            OreTextureFile = new Texture(this, "http://dl.dropbox.com/u/19653570/ores.png", 256, 256, 16); //Ores should be capitalised! ;(
+            getClass().getResourceAsStream("resources/ores.png");
+              URL url = getClass().getClassLoader().getResource("resources/ores.png");
+                OreTextureFile = new Texture(this, url.toExternalForm(), 256, 256, 16); //Ores should be capitalised! ;(
 		TreeTextureFile = new Texture(this, "http://dl.dropbox.com/u/19653570/Trees.png", 256, 256, 16);
 		FoodTextureFile = new Texture(this, "http://cloud.github.com/downloads/mbsuperstar1/MoarStuph/Food.png", 256, 256, 16); // TODO Find an artist...
 		FarmingTextureFile = new Texture(this, "", 256, 256, 16); 
 		MiscTextureFile = new Texture(this, "http://dl.dropbox.com/u/19653570/Misc.png", 256, 256, 16);
-		SpoutManager.getFileManager().addToCache(this, "http://dl.dropbox.com/u/19653570/ores.png");
+		SpoutManager.getFileManager().addToCache(this, url.toExternalForm());
                 SpoutManager.getFileManager().addToCache(this, "http://dl.dropbox.com/u/19653570/Trees.png");
                 SpoutManager.getFileManager().addToCache(this, "http://cloud.github.com/downloads/mbsuperstar1/MoarStuph/Food.png");
                 SpoutManager.getFileManager().addToCache(this, "http://dl.dropbox.com/u/19653570/Misc.png");

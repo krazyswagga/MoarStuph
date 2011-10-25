@@ -2,6 +2,7 @@ package me.samkio.mo;
 
 import me.samkio.mo.blocks.logs.WillowLog;
 import me.samkio.mo.blocks.misc.microwave.MicrowaveBlock;
+import me.samkio.mo.blocks.ores.BaseOre;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -27,7 +28,7 @@ public class DebugMan implements CommandExecutor {
 							SpoutManager.getMaterialManager()
 									.getCustomItemStack(b, 64));
 		}*/
-		for (GenericCustomItem b : ItemMaps.food) {
+		for (BaseOre b : ItemMaps.ores) {
 			plr.getInventory().addItem(
 					SpoutManager.getMaterialManager()
 					.getCustomItemStack(b, 64));

@@ -1,8 +1,8 @@
 package me.samkio.mo.listeners;
 
+
 import me.samkio.mo.MoarStuph;
 import me.samkio.mo.blocks.misc.microwave.MicrowaveBlock;
-
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerListener;
@@ -15,6 +15,7 @@ public class MoarPlayerListener extends PlayerListener{
 		this.plugin = p;
 	}
 
+    @Override
 	public void onPlayerInteract(PlayerInteractEvent e) {
 		if (e.getAction()!= Action.RIGHT_CLICK_BLOCK) {
 			return;
