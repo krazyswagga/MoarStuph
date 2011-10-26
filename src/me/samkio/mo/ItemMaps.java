@@ -4,22 +4,22 @@ import java.util.HashSet;
 import java.util.Set;
 import me.samkio.mo.blocks.cyrstals.*;
 import me.samkio.mo.blocks.ores.*;
+import me.samkio.mo.items.food.BaseFood;
 import me.samkio.mo.items.food.fruits.BananaFruit;
 import me.samkio.mo.items.food.fruits.CoconutFruit;
 import me.samkio.mo.items.food.fruits.OrangeFruit;
 import me.samkio.mo.items.food.fruits.PearFruit;
-import org.getspout.spoutapi.material.item.GenericCustomItem;
 
 /**
  *
  * @author Samkio
  */
 public class ItemMaps {
-        public static Set<BaseOre> ores = new HashSet<BaseOre>();
+	public static Set<BaseOre> ores = new HashSet<BaseOre>();
 	public static Set<BaseCrystal> crystals = new HashSet<BaseCrystal>();
-	public static Set<GenericCustomItem> food = new HashSet<GenericCustomItem>();
+	public static Set<BaseFood> food = new HashSet<BaseFood>();
 
-    public static void loadBlocks(MoarStuph p){
+    public static void loadBlocks(MoarStuph p) {
 		//Standard Real World Ores
 		SilverOre s = new SilverOre(p); //SilverOre
 		CopperOre s1 = new CopperOre(p); //CopperOre
@@ -72,9 +72,9 @@ public class ItemMaps {
 		crystals.add(c5);
 		crystals.add(c6);
 		
-		PearFruit f = new PearFruit(p);  //Samkio, p is currently temporary code
-		CoconutFruit f1 = new CoconutFruit(p); // so I can quickly add all food
-		BananaFruit f2 = new BananaFruit(p); // to the players inventory.
+		PearFruit f = new PearFruit(p);
+		CoconutFruit f1 = new CoconutFruit(p);
+		BananaFruit f2 = new BananaFruit(p);
 		OrangeFruit f3 = new OrangeFruit(p);
 		food.add(f);
 		food.add(f1);
@@ -92,4 +92,5 @@ public class ItemMaps {
 		MapleLog  t5 = new MapleLog(p);
 		RottenLog t6 = new RottenLog(p);
 		PalmLog t7 = new PalmLog(p); */
-}}
+	}
+}
