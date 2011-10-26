@@ -8,7 +8,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.getspout.spoutapi.SpoutManager;
-import org.getspout.spoutapi.material.item.GenericCustomItem;
 
 public class DebugMan implements CommandExecutor {
 	private MoarStuph plugin;
