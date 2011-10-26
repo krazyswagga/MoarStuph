@@ -17,7 +17,8 @@ import org.getspout.spoutapi.inventory.MaterialManager;
 public class OrePopulator extends BlockPopulator {
 	private MaterialManager itm = SpoutManager.getMaterialManager();
 	public static final Logger log = Logger.getLogger("Minecraft");
-    private MoarStuph p;
+    @SuppressWarnings("unused")
+	private MoarStuph p;
 	public OrePopulator(MoarStuph p) {
 		this.p = p;
 	}

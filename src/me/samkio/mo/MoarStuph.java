@@ -3,6 +3,7 @@ package me.samkio.mo;
 
 
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -30,7 +31,7 @@ public class MoarStuph extends JavaPlugin {
 //http://www.minecraftforum.net/topic/423079-escape-haunted-house-escape-210-dls-first-official-mcdh-clan-map/page__p__5875439#entry5875439
 	//http://www.minecraftforum.net/topic/697245-181-halloween-day-7/
 	
-	public static final Logger log = Logger.getLogger("Minecraft");
+	public final Logger log = Logger.getLogger("Minecraft");
 	public Texture OreTextureFile, TreeTextureFile, FoodTextureFile, FarmingTextureFile, MiscTextureFile;
 	//private MoarPlayerListener pL = new MoarPlayerListener(this);
 	//private MoarBlockListener bL = new MoarBlockListener(this);
@@ -85,15 +86,13 @@ public class MoarStuph extends JavaPlugin {
 		}
         }
         public void setupTextures(){
-        	getClass().getResourceAsStream("resources/ores.png");
-            URL url = getClass().getClassLoader().getResource("resources/ores.png");
-            OreTextureFile = new Texture(this, url.toExternalForm(), 256, 256, 16);
+            OreTextureFile = new Texture(this, "ores.png", 256, 256, 16);
 		    TreeTextureFile = new Texture(this, "http://dl.dropbox.com/u/19653570/Trees.png", 256, 256, 16);
 		    FarmingTextureFile = new Texture(this, "", 256, 256, 16); 
 		    MiscTextureFile = new Texture(this, "http://dl.dropbox.com/u/19653570/Misc.png", 256, 256, 16);
-		    SpoutManager.getFileManager().addToCache(this, url.toExternalForm());
             SpoutManager.getFileManager().addToCache(this, "http://dl.dropbox.com/u/19653570/Trees.png");
             SpoutManager.getFileManager().addToCache(this, "http://dl.dropbox.com/u/19653570/Misc.png");
+            SpoutManager.getFileManager().addToCache(this, getClass().getResourceAsStream("resources/ores.png"), "ores.png");
             //TODO place in resources folder.
         }
         

@@ -19,7 +19,8 @@ import org.getspout.spoutapi.material.block.GenericCustomBlock;
 public class CrystalPopulator extends BlockPopulator {
 	private MaterialManager itm = SpoutManager.getMaterialManager();
 	public static final Logger log = Logger.getLogger("Minecraft");
-    private MoarStuph p;
+    @SuppressWarnings("unused")
+	private MoarStuph p;
 	public CrystalPopulator(MoarStuph p) {
 		this.p = p;
 	}
