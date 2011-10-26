@@ -1,8 +1,13 @@
 package me.samkio.mo.blocks.ores;
 
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 import me.samkio.mo.MoarStuph;
 import org.bukkit.World;
+import org.bukkit.block.Biome;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -12,19 +17,26 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 
 public class BaseOre extends GenericCubeCustomBlock {
 	private int miny = 0, maxy = 126, frequency = 0,maxDump=0;
-
+	private List<Biome> b;
 	public BaseOre(MoarStuph p, String name, int id) {
 		super(p, name, new GenericCubeBlockDesign(p, p.OreTextureFile, id));
 	}
-	public BaseOre(MoarStuph p, String name, int id,int miny,int maxy,int fr, int maxD) {
+	public BaseOre(MoarStuph p, String name, int id,int miny,int maxy,int fr, int maxD,List<Biome> biomes) {
 		super(p, name, new GenericCubeBlockDesign(p, p.OreTextureFile, id));
 		this.miny = miny;
 		this.maxy = maxy;
 		this.frequency = fr;
 		this.maxDump = maxD;
+		this.setBiomes(biomes);
 	}
 
-
+    public static List<Biome> allBiomes(){
+    	List<Biome> x = new ArrayList<Biome>();
+    	for(Biome b:Biome.values()){
+    		x.add(b);
+    	}
+    	return x;	
+    }
 	public void setMinY(int i) {
 		this.miny = i;
 	}
@@ -143,6 +155,12 @@ public class BaseOre extends GenericCubeCustomBlock {
 			int arg3, BlockFace arg4) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	public List<Biome> getBiomes() {
+		return b;
+	}
+	public void setBiomes(List<Biome> b) {
+		this.b = b;
 	}
 
 }

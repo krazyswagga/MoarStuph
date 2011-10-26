@@ -5,7 +5,7 @@ import me.samkio.mo.MoarStuph;
 public class JadeCrystal extends BaseCrystal {
 
 	public JadeCrystal(MoarStuph p) {
-		super(p, "Jade Crystal", 17, 0, 20, 8, 6);
+		super(p, "Jade Crystal", 17, 0,32, 2, 6,BaseCrystal.allBiomes());
 	}
 
 }

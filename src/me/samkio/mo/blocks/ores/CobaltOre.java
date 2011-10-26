@@ -10,7 +10,7 @@ public class CobaltOre extends BaseOre{
 
 	public CobaltOre(MoarStuph p)
 	{
-		super(p, "Cobalt Ore", 11,10,50,8,6);
+		super(p, "Cobalt Ore", 11,0,32,2,8,BaseOre.allBiomes());
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(this, 1));
 	}
 

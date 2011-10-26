@@ -8,7 +8,7 @@ public class MithrilOre extends BaseOre{
 
 	public MithrilOre(MoarStuph p)
 	{
-		super(p, "Mithril Ore", 15,10,50,8,6);
+		super(p, "Mithril Ore", 15,0,45,2,7,BaseOre.allBiomes());
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(this, 1));
 	}
 }

@@ -6,7 +6,7 @@ import org.getspout.spoutapi.SpoutManager;
 public class ChromiumOre extends BaseOre{
 
 	public ChromiumOre(MoarStuph p) {
-		super(p, "Chromium Ore", 6, 10, 50, 8,6);
+		super(p, "Chromium Ore", 6, 0, 32, 2,6,BaseOre.allBiomes());
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(this, 1));
 	}
 }

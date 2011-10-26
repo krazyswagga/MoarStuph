@@ -34,6 +34,7 @@ public class OrePopulator extends BlockPopulator {
 
 	private void internal(Chunk source, Random random, int originX,
 			int originY, int originZ, int amount, BaseOre type) {
+		if(!type.getBiomes().contains(source.getBlock(originX, originY, originZ).getBiome())) return;
 		for (int i = 0; i < amount; i++) {
 			int x = originX + random.nextInt(amount / 2) - amount / 4;
 			int y = originY + random.nextInt(amount / 4) - amount / 8;

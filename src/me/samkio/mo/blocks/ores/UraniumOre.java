@@ -9,7 +9,7 @@ public class UraniumOre extends BaseOre{
 
 	public UraniumOre(MoarStuph p)
 	{
-		super(p, "Uranium Ore", 7,10,50,8,6);
+		super(p, "Uranium Ore", 7,0,32,1,6,BaseOre.allBiomes());
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(this, 1));
 	}
 

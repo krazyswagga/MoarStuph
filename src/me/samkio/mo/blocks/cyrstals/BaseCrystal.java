@@ -1,7 +1,11 @@
 package me.samkio.mo.blocks.cyrstals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import me.samkio.mo.MoarStuph;
 import org.bukkit.World;
+import org.bukkit.block.Biome;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
@@ -9,16 +13,30 @@ import org.getspout.spoutapi.material.block.GenericCustomBlock;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
 public class BaseCrystal extends GenericCustomBlock {
-
+	private List<Biome> b;
 	private int miny = 0, maxy = 126, frequency = 0,maxDump=0;
-	public BaseCrystal(MoarStuph p, String name, int id,int miny,int maxy,int fr, int maxD) {
+	public BaseCrystal(MoarStuph p, String name, int id,int miny,int maxy,int fr, int maxD,List<Biome> biomes) {
 		super(p, name, false);
                 this.setBlockDesign(new CrystalDesign(id, p));
 		this.miny = miny;
 		this.maxy = maxy;
 		this.frequency = fr;
 		this.maxDump = maxD;
+		this.setBiomes(biomes);
 	}
+	public List<Biome> getBiomes() {
+		return b;
+	}
+	public void setBiomes(List<Biome> b) {
+		this.b = b;
+	}
+	 public static List<Biome> allBiomes(){
+	    	List<Biome> x = new ArrayList<Biome>();
+	    	for(Biome b:Biome.values()){
+	    		x.add(b);
+	    	}
+	    	return x;	
+	    }
 	public BaseCrystal(MoarStuph p, String name, int id) {
 		super(p, name, false);
                 this.setBlockDesign(new CrystalDesign(id, p));

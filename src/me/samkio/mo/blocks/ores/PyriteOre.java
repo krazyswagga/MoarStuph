@@ -8,7 +8,7 @@ public class PyriteOre extends BaseOre{
 
 	public PyriteOre(MoarStuph p)
 	{
-		super(p, "Pyrite Ore", 12,10,50,8,6);
+		super(p, "Pyrite Ore", 12,0,32,2,6,BaseOre.allBiomes());
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(this, 1));
 	}
 

@@ -9,7 +9,7 @@ public class DarkOre extends BaseOre{
 
 	public DarkOre(MoarStuph p)
 	{
-		super(p, "Dark Ore", 14,10,50,8,6);
+		super(p, "Dark Ore", 14,0,16,1,6,BaseOre.allBiomes());
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(this, 1));
 	}
 

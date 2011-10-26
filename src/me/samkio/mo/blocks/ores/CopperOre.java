@@ -9,7 +9,7 @@ public class CopperOre extends BaseOre{
 
 	public CopperOre(MoarStuph p)
 	{
-		super(p, "Copper Ore", 1,10,50,8,6);
+		super(p, "Copper Ore", 1,32,128,20,8,BaseOre.allBiomes());
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(this, 1));
 	}
 

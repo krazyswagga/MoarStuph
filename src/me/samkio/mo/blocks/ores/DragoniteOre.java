@@ -9,7 +9,7 @@ public class DragoniteOre extends BaseOre{
 
 	public DragoniteOre(MoarStuph p)
 	{
-		super(p, "Dragonite Ore", 8,10,50,8,6);
+		super(p, "Dragonite Ore", 8,0,45,1,6,BaseOre.allBiomes());
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(this, 1));
 	}
 

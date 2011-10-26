@@ -9,7 +9,7 @@ public class RuniteOre extends BaseOre{
 
 	public RuniteOre(MoarStuph p)
 	{
-		super(p, "Zinc Ore", 5,10,50,8,6);
+		super(p, "Runite Ore", 5,0,32,1,6,BaseOre.allBiomes());
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(this, 1));
 	}
 }
