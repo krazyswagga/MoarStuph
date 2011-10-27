@@ -6,5 +6,4 @@ commands:
   dbg:
     description: Spawns Stuff.
     usage: Spawns Stuff.
-depend: [Spout] 
-load: startup
+depend: [Spout]

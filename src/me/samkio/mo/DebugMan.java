@@ -1,7 +1,7 @@
 package me.samkio.mo;
 
-import me.samkio.mo.blocks.logs.WillowLog;
 import me.samkio.mo.blocks.misc.microwave.MicrowaveBlock;
+import me.samkio.mo.blocks.misc.nuclear.NuclearBomb;
 import me.samkio.mo.blocks.ores.BaseOre;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -34,7 +34,10 @@ public class DebugMan implements CommandExecutor {
 		}
 		plr.getInventory().addItem(
 				SpoutManager.getMaterialManager().getCustomItemStack(
-						new WillowLog(plugin), 64)); 
+						new NuclearBomb(plugin), 64));
+		//plr.getInventory().addItem(
+			//	SpoutManager.getMaterialManager().getCustomItemStack(
+			//			new WillowLog(plugin), 64)); 
 		plr.getInventory().addItem(
 				SpoutManager.getMaterialManager().getCustomItemStack(
 						new MicrowaveBlock(plugin), 64));
