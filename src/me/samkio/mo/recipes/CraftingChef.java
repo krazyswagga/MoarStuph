@@ -9,6 +9,11 @@ import me.samkio.mo.MoarStuph;
 import me.samkio.mo.blocks.misc.nuclear.NuclearBomb;
 import me.samkio.mo.blocks.ores.TitaniumOre;
 import me.samkio.mo.blocks.ores.UraniumOre;
+import me.samkio.mo.items.coins.BronzeCoin;
+import me.samkio.mo.items.coins.GoldCoin;
+import me.samkio.mo.items.coins.SilverCoin;
+import me.samkio.mo.items.ingots.BronzeIngot;
+import me.samkio.mo.items.ingots.SilverIngot;
 import me.samkio.mo.items.ingots.TitaniumIngot;
 import me.samkio.mo.items.ingots.UraniumIngot;
 
@@ -37,6 +42,28 @@ public class CraftingChef {
 		SpoutShapelessRecipe x2 = new SpoutShapelessRecipe(spec2);
 		x2.addIngredient(1, new TitaniumOre(plugin));
 		x2.addIngredient(4, MaterialData.coal);
+		SpoutManager.getMaterialManager().registerSpoutRecipe(x2);
+		this.CoinRecipes();
+		
+		
+		
+	}
+	
+	
+	private void CoinRecipes(){
+		ItemStack GoldCoin = SpoutManager.getMaterialManager().getCustomItemStack(new GoldCoin(plugin), 5);
+		SpoutShapelessRecipe x = new SpoutShapelessRecipe(GoldCoin);
+		x.addIngredient(1, MaterialData.goldIngot);
+		SpoutManager.getMaterialManager().registerSpoutRecipe(x);
+		
+		ItemStack SilverCoin = SpoutManager.getMaterialManager().getCustomItemStack(new SilverCoin(plugin), 5);
+		SpoutShapelessRecipe x1 = new SpoutShapelessRecipe(SilverCoin);
+		x1.addIngredient(1, new SilverIngot(plugin));
+		SpoutManager.getMaterialManager().registerSpoutRecipe(x1);
+		
+		ItemStack BronzeCoin = SpoutManager.getMaterialManager().getCustomItemStack(new BronzeCoin(plugin), 5);
+		SpoutShapelessRecipe x2 = new SpoutShapelessRecipe(BronzeCoin);
+		x2.addIngredient(1, new BronzeIngot(plugin));
 		SpoutManager.getMaterialManager().registerSpoutRecipe(x2);
 	}
 
