@@ -2,6 +2,7 @@ package me.samkio.mo.recipes;
 
 import org.bukkit.inventory.ItemStack;
 import org.getspout.spoutapi.SpoutManager;
+import org.getspout.spoutapi.inventory.SpoutShapedRecipe;
 import org.getspout.spoutapi.inventory.SpoutShapelessRecipe;
 import org.getspout.spoutapi.material.MaterialData;
 
@@ -33,9 +34,10 @@ public class CraftingChef {
 		SpoutManager.getMaterialManager().registerSpoutRecipe(x);
 		
 		ItemStack spec1 = SpoutManager.getMaterialManager().getCustomItemStack(new NuclearBomb(plugin), 1);
-		SpoutShapelessRecipe x1 = new SpoutShapelessRecipe(spec1);
-		x1.addIngredient(5, new TitaniumIngot(plugin));
-		x1.addIngredient(4, new UraniumIngot(plugin));
+		SpoutShapedRecipe x1 = new SpoutShapedRecipe(spec1);
+		x1.shape("ABA", "BAB", "ABA");
+		x1.setIngredient('B', new TitaniumIngot(plugin));
+		x1.setIngredient('A', new UraniumIngot(plugin));
 		SpoutManager.getMaterialManager().registerSpoutRecipe(x1);
 		
 		ItemStack spec2 = SpoutManager.getMaterialManager().getCustomItemStack(new TitaniumIngot(plugin), 1);

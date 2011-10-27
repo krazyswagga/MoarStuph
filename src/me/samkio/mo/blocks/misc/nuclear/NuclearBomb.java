@@ -13,7 +13,6 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 
 public class NuclearBomb extends GenericCubeCustomBlock {
 	private static int[] id = {3,1,0,2,0,0}; //Using Microwave texture as a place-holder. Waiting on artists.
-	@SuppressWarnings("unused")
 	private MoarStuph p;
 
 	public NuclearBomb(MoarStuph plugin) {
@@ -37,18 +36,23 @@ public class NuclearBomb extends GenericCubeCustomBlock {
 	public void onBlockClicked(World world, int x, int y, int z,
 			SpoutPlayer arg4) {
 		Location loc = world.getBlockAt(x, y, z).getLocation();
-		world.createExplosion(loc, 10);
+		NuclearTimer timer = new NuclearTimer(loc, world, 10);
+		p.getServer().getScheduler().scheduleSyncDelayedTask(p, timer, 40);
 	}
 
 	@Override
 	public void onBlockDestroyed(World world, int x, int y, int z) {
 		Location loc = world.getBlockAt(x, y, z).getLocation();
-		world.createExplosion(loc, 10);
+		NuclearTimer timer = new NuclearTimer(loc, world, 10);
+		p.getServer().getScheduler().scheduleSyncDelayedTask(p, timer, 40);
 	}
 
 	@Override
 	public boolean onBlockInteract(World world, int x, int y, int z,
 			SpoutPlayer arg4) {
+		Location loc = world.getBlockAt(x, y, z).getLocation();
+		NuclearTimer timer = new NuclearTimer(loc, world, 10);
+		p.getServer().getScheduler().scheduleSyncDelayedTask(p, timer, 40);
 		return false;
 	}
 
@@ -57,7 +61,8 @@ public class NuclearBomb extends GenericCubeCustomBlock {
 		Block block = world.getBlockAt(x, y, z);
 		if (block.isBlockPowered() || block.isBlockIndirectlyPowered()) {
 			Location loc = block.getLocation();
-			world.createExplosion(loc, 10);
+			NuclearTimer timer = new NuclearTimer(loc, world, 10);
+			p.getServer().getScheduler().scheduleSyncDelayedTask(p, timer, 40);
 			}
 	}
 
@@ -67,7 +72,8 @@ public class NuclearBomb extends GenericCubeCustomBlock {
 		Block block = world.getBlockAt(x, y, z);
 		if (block.isBlockPowered() || block.isBlockIndirectlyPowered()) {
 			Location loc = block.getLocation();
-			world.createExplosion(loc, 10);
+			NuclearTimer timer = new NuclearTimer(loc, world, 10);
+			p.getServer().getScheduler().scheduleSyncDelayedTask(p, timer, 40);
 			}
 	}
 
@@ -82,8 +88,8 @@ public class NuclearBomb extends GenericCubeCustomBlock {
 		Block block = world.getBlockAt(x, y, z);
 		if (block.isBlockPowered() || block.isBlockIndirectlyPowered()) {
 			Location loc = block.getLocation();
-			world.createExplosion(loc, 10);
+			NuclearTimer timer = new NuclearTimer(loc, world, 10);
+			p.getServer().getScheduler().scheduleSyncDelayedTask(p, timer, 40);
 		}
 	}
-
 }
