@@ -79,7 +79,6 @@ public class NuclearBomb extends GenericCubeCustomBlock {
 	@Override
 	public void onNeighborBlockChange(World world, int x, int y, int z,
 			int arg4) {
-		System.out.println("FIRED");
 		Block block = world.getBlockAt(x, y, z);
 		if (block.isBlockPowered() || block.isBlockIndirectlyPowered()) {
 			Location loc = block.getLocation();
