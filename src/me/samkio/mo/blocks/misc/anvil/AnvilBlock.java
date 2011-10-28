@@ -63,8 +63,8 @@ public class AnvilBlock extends GenericCubeCustomBlock {
 	@Override
 	public boolean onBlockInteract(World arg0, int arg1, int arg2, int arg3,
 			SpoutPlayer arg4) {
-
-		arg4.openScreen(ScreenType.CHEST_INVENTORY, true);
+      arg4.getMainScreen().attachPopupScreen(new AnvilGUI2());
+		/*arg4.openScreen(ScreenType.CHEST_INVENTORY, true);
 		TileEntityFurnace titleentityfurnace = new TileEntityFurnace();
 		EntityPlayer ep = ((CraftPlayer) arg4.getPlayer()).getHandle();
 		ep.netServerHandler.sendPacket(new Packet100OpenWindow(1, 2,"Anvil", titleentityfurnace.getSize()));
@@ -77,7 +77,7 @@ public class AnvilBlock extends GenericCubeCustomBlock {
 		// TileEntity tileentity = this.a_();
 		// ep.a(tileentity);
 		arg4.setTexturePack("http://dl.dropbox.com/u/19653570/Moar/Anvil.zip");
-		this.p.getServer().getScheduler().scheduleSyncRepeatingTask(this.p, new AnvilEmulator(arg4), 10, 10);
+		this.p.getServer().getScheduler().scheduleSyncRepeatingTask(this.p, new AnvilEmulator(arg4), 10, 10); */
 		// arg4.resetTexturePack();
 
 		return true;
