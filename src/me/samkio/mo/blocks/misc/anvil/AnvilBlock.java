@@ -16,7 +16,6 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 
 public class AnvilBlock extends GenericCubeCustomBlock {
 	private static int[] id = { 3, 1, 0, 2, 0, 0 };
-	@SuppressWarnings("unused")
 	private MoarStuph p;
 
 	public AnvilBlock(MoarStuph plugin) {

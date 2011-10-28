@@ -1,5 +1,6 @@
 package me.samkio.mo;
 
+import me.samkio.mo.blocks.crops.PotatoCrop;
 import me.samkio.mo.blocks.misc.anvil.AnvilBlock;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -29,16 +30,16 @@ public class DebugMan implements CommandExecutor {
 			plr.getInventory().addItem(
 					SpoutManager.getMaterialManager()
 					.getCustomItemStack(b, 64));
-		}
+		} */
 		plr.getInventory().addItem(
 				SpoutManager.getMaterialManager().getCustomItemStack(
-						new NuclearBomb(plugin), 64));
+						new PotatoCrop(plugin), 64));
 		//plr.getInventory().addItem(
 			//	SpoutManager.getMaterialManager().getCustomItemStack(
 			//			new WillowLog(plugin), 64)); 
-		plr.getInventory().addItem(
+		/*plr.getInventory().addItem(
 				SpoutManager.getMaterialManager().getCustomItemStack(
-						new MicrowaveBlock(plugin), 64)); */
+						new MicrowaveBlock(plugin), 64));*/
 		
 		plr.getInventory().addItem(
 				SpoutManager.getMaterialManager().getCustomItemStack(
