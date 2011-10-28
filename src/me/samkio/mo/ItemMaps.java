@@ -2,7 +2,24 @@ package me.samkio.mo;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import org.getspout.spoutapi.material.block.GenericCubeCustomBlock;
+
+import me.samkio.mo.blocks.crops.BaseCrop;
+import me.samkio.mo.blocks.crops.PotatoCrop;
 import me.samkio.mo.blocks.cyrstals.*;
+import me.samkio.mo.blocks.logs.AshLog;
+import me.samkio.mo.blocks.logs.BaseLog;
+import me.samkio.mo.blocks.logs.BeechLog;
+import me.samkio.mo.blocks.logs.ElmLog;
+import me.samkio.mo.blocks.logs.MapleLog;
+import me.samkio.mo.blocks.logs.OakLog;
+import me.samkio.mo.blocks.logs.PalmLog;
+import me.samkio.mo.blocks.logs.RottenLog;
+import me.samkio.mo.blocks.logs.WillowLog;
+import me.samkio.mo.blocks.misc.anvil.AnvilBlock;
+import me.samkio.mo.blocks.misc.microwave.MicrowaveBlock;
+import me.samkio.mo.blocks.misc.nuclear.NuclearBomb;
 import me.samkio.mo.blocks.ores.*;
 import me.samkio.mo.items.food.BaseFood;
 import me.samkio.mo.items.food.fruits.BananaFruit;
@@ -18,6 +35,9 @@ public class ItemMaps {
 	public static Set<BaseOre> ores = new HashSet<BaseOre>();
 	public static Set<BaseCrystal> crystals = new HashSet<BaseCrystal>();
 	public static Set<BaseFood> food = new HashSet<BaseFood>();
+	public static Set<BaseLog> log = new HashSet<BaseLog>();
+	public static Set<BaseCrop> crops = new HashSet<BaseCrop>();
+	public static Set<GenericCubeCustomBlock> misc = new HashSet<GenericCubeCustomBlock>();
 
     public static void loadBlocks(MoarStuph p) {
 		//Standard Real World Ores
@@ -80,17 +100,35 @@ public class ItemMaps {
 		food.add(f1);
 		food.add(f2);
 		food.add(f3);
+		
+		MicrowaveBlock m = new MicrowaveBlock(p);  //If all blocks aren't created on, onEnable..
+		NuclearBomb m1 = new NuclearBomb(p);       //A reload would cause the blocks that are left out to..
+		AnvilBlock m2 = new AnvilBlock(p);         //become flint or an odd block if placed. Until they are created
+		misc.add(m);                               //In the code. This may be the case with items, not tested yet however.
+		misc.add(m1);
+		misc.add(m2);
+		
+		PotatoCrop cr = new PotatoCrop(p);
+		crops.add(cr);
 	
 		//Microwave has custom DING
 		
 		//Trees Real
-		/*WillowLog t = new WillowLog(p);
-	        OakLog t1 = new OakLog(p);
+		WillowLog t = new WillowLog(p);
+	    OakLog t1 = new OakLog(p);
 		ElmLog t2 = new ElmLog(p);
 		BeechLog t3 = new BeechLog(p);
 		AshLog t4 = new AshLog(p);
 		MapleLog  t5 = new MapleLog(p);
 		RottenLog t6 = new RottenLog(p);
-		PalmLog t7 = new PalmLog(p); */
+		PalmLog t7 = new PalmLog(p);
+		log.add(t);
+		log.add(t1);
+		log.add(t2);
+		log.add(t3);
+		log.add(t4);
+		log.add(t5);
+		log.add(t6);
+		log.add(t7);
 	}
 }

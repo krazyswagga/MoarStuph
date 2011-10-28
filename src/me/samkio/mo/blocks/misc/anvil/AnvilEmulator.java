@@ -16,6 +16,7 @@ import org.getspout.spoutapi.player.SpoutPlayer;
 public class AnvilEmulator implements Runnable{
 	private SpoutPlayer p;
 	private EntityHuman h;
+	@SuppressWarnings("unused")
 	private InventoryPlayer inventory;
     public AnvilEmulator(SpoutPlayer p){
     	this.p = p;

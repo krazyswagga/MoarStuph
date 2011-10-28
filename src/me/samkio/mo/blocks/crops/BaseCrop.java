@@ -13,7 +13,7 @@ public class BaseCrop extends GenericCubeCustomBlock {
 
 	public BaseCrop(MoarStuph p, String name, int[] id) {
 		super(p, name, new GenericCubeBlockDesign(p, p.FarmingTextureFile, id));
-		this.setBlockDesign(new CropDesign());
+		this.setBlockDesign(new CropDesign(p, p.OreTextureFile, id));
 	}
 
 	@Override
