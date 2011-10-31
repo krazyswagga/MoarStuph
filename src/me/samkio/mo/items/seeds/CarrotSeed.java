@@ -5,7 +5,7 @@ import me.samkio.mo.MoarStuph;
 public class CarrotSeed extends BaseSeed {
 
 	public CarrotSeed(MoarStuph plugin) {
-		super(plugin, "Potato Seed", "Potato");
+		super(plugin, "Carrot Seed", "Carrot");
 	}
 
 }
