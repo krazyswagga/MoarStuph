@@ -18,7 +18,11 @@ public class BaseFood extends GenericCustomItem {
 	}
 	
 	public void consume(SpoutPlayer player) {
-		player.getItemInHand().setAmount(player.getItemInHand().getAmount()-1);
+		if (player.getItemInHand().getAmount() == 1) {
+			player.setItemInHand(null);
+		} else {
+			player.getItemInHand().setAmount(player.getItemInHand().getAmount() - 1);
+		}
 	}
 	
 	@Override
