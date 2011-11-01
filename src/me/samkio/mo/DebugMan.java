@@ -1,7 +1,6 @@
 package me.samkio.mo;
 
 import me.samkio.mo.blocks.bushes.BlueBerryBush;
-import me.samkio.mo.blocks.bushes.EmptyBush;
 import me.samkio.mo.blocks.crops.PotatoCrop;
 import me.samkio.mo.blocks.misc.anvil.AnvilBlock;
 import me.samkio.mo.items.food.berries.BlueBerry;
