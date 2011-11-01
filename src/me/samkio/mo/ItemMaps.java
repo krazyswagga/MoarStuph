@@ -5,6 +5,8 @@ import java.util.Set;
 
 import org.getspout.spoutapi.material.block.GenericCubeCustomBlock;
 
+import me.samkio.mo.blocks.bushes.BaseBush;
+import me.samkio.mo.blocks.bushes.EmptyBush;
 import me.samkio.mo.blocks.crops.BaseCrop;
 import me.samkio.mo.blocks.crops.PotatoCrop;
 import me.samkio.mo.blocks.cyrstals.*;
@@ -37,7 +39,9 @@ public class ItemMaps {
 	public static Set<BaseFood> food = new HashSet<BaseFood>();
 	public static Set<BaseLog> log = new HashSet<BaseLog>();
 	public static Set<BaseCrop> crops = new HashSet<BaseCrop>();
+	public static Set<BaseBush> bushes = new HashSet<BaseBush>();
 	public static Set<GenericCubeCustomBlock> misc = new HashSet<GenericCubeCustomBlock>();
+	public static EmptyBush b;
 
     public static void loadBlocks(MoarStuph p) {
 		//Standard Real World Ores
@@ -130,5 +134,9 @@ public class ItemMaps {
 		log.add(t5);
 		log.add(t6);
 		log.add(t7);
+		
+		//Bushes
+		b = new EmptyBush(p);
+		bushes.add(b);
 	}
 }
