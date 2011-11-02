@@ -6,6 +6,7 @@ import java.util.Set;
 import org.getspout.spoutapi.material.block.GenericCubeCustomBlock;
 
 import me.samkio.mo.blocks.bushes.BaseBush;
+import me.samkio.mo.blocks.bushes.BlueBerryBush;
 import me.samkio.mo.blocks.bushes.EmptyBush;
 import me.samkio.mo.blocks.crops.BaseCrop;
 import me.samkio.mo.blocks.crops.PotatoCrop;
@@ -42,6 +43,7 @@ public class ItemMaps {
 	public static Set<BaseBush> bushes = new HashSet<BaseBush>();
 	public static Set<GenericCubeCustomBlock> misc = new HashSet<GenericCubeCustomBlock>();
 	public static EmptyBush b;
+	public static BlueBerryBush b1;
 
     public static void loadBlocks(MoarStuph p) {
 		//Standard Real World Ores
@@ -137,6 +139,6 @@ public class ItemMaps {
 		
 		//Bushes
 		b = new EmptyBush(p);
-		bushes.add(b);
+		b1 = new BlueBerryBush(p);
 	}
 }

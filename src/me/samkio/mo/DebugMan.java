@@ -1,10 +1,10 @@
 package me.samkio.mo;
 
 import me.samkio.mo.blocks.bushes.BlueBerryBush;
-import me.samkio.mo.blocks.bushes.EmptyBush;
 import me.samkio.mo.blocks.crops.PotatoCrop;
 import me.samkio.mo.blocks.misc.anvil.AnvilBlock;
 import me.samkio.mo.items.food.berries.BlueBerry;
+import me.samkio.mo.items.seeds.BlueBerrySeed;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -49,6 +49,7 @@ public class DebugMan implements CommandExecutor {
 				SpoutManager.getMaterialManager().getCustomItemStack(
 						new AnvilBlock(plugin), 1));
 		plr.getInventory().addItem(SpoutManager.getMaterialManager().getCustomItemStack(new BlueBerry(plugin), 1));
+		plr.getInventory().addItem(SpoutManager.getMaterialManager().getCustomItemStack(new BlueBerrySeed(plugin), 1));
 		plr.getInventory().addItem(SpoutManager.getMaterialManager().getCustomItemStack(new BlueBerryBush(plugin), 64));
 		return true;
 	}
