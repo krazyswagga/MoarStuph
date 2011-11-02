@@ -11,9 +11,12 @@ import org.getspout.spoutapi.material.block.GenericCubeCustomBlock;
 import org.getspout.spoutapi.player.SpoutPlayer;
 
 public class BaseBush extends GenericCubeCustomBlock {
+	@SuppressWarnings("unused")
+	private BushWatcher watcher;
 
-	public BaseBush(MoarStuph p, String name, int[] ids) {
-		super(p, name, new GenericCubeBlockDesign(p, p.TreeTextureFile, ids));
+	public BaseBush(MoarStuph p, String name, GenericCubeBlockDesign design) {
+		super(p, name, design);
+		this.setHardness(0.5f);
 	}
 
 	@Override

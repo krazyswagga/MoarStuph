@@ -10,6 +10,7 @@ import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.getspout.spoutapi.SpoutManager;
+import org.getspout.spoutapi.block.design.GenericCubeBlockDesign;
 import org.getspout.spoutapi.player.SpoutPlayer;
 import java.util.Random;
 
@@ -17,8 +18,9 @@ public class BaseBerryBush extends BaseBush {
 	MoarStuph p;
 
 	public BaseBerryBush(MoarStuph p, String name, int[] ids, String berryType) {
-		super(p, name, ids);
+		super(p, name, new GenericCubeBlockDesign(p, p.TreeTextureFile, ids));
 		this.p = p;
+		// TODO Move this to the individual berry bushes.
 		this.setItemDrop(SpoutManager.getMaterialManager().getCustomItemStack(new BlueBerry(p), 1));
 	}
 
