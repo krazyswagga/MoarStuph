@@ -1,10 +1,7 @@
 package me.samkio.mo.blocks.leaves;
 
-import java.util.Random;
 
 import org.bukkit.World;
-import org.bukkit.block.Block;
-import org.bukkit.inventory.ItemStack;
 import me.samkio.mo.MoarStuph;
 
 public class AppleLeaf extends BaseLeaf {
